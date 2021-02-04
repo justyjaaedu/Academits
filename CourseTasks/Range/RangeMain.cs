@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace RangeTask
+namespace RangeTask1
 {
     class RangeMain
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите значения начала числового диапазона:");
+            Console.WriteLine("Введите значение начала числового диапазона:");
             double from = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Введите значения конца числового диапазона:");
+            Console.WriteLine("Введите значение конца числового диапазона:");
             double to = Convert.ToDouble(Console.ReadLine());
 
             Range range = new Range(from, to);
