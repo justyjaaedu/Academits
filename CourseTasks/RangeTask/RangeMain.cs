@@ -7,12 +7,12 @@ namespace RangeTask
         static void Main(string[] args)
         {
             Console.WriteLine("Введите значение начала числового диапазона:");
-            double from = Convert.ToDouble(Console.ReadLine());
+            double from1 = Convert.ToDouble(Console.ReadLine());
 
             Console.WriteLine("Введите значение конца числового диапазона:");
-            double to = Convert.ToDouble(Console.ReadLine());
+            double to1 = Convert.ToDouble(Console.ReadLine());
 
-            Range range1 = new Range(from, to);
+            Range range1 = new Range(from1, to1);
 
             Console.WriteLine("Длина диапазона равна: " + range1.GetLength());
 
