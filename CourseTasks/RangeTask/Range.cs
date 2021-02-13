@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RangeTask
 {
-    class Range
+    public class Range
     {
         public double From { get; set; }
+
         public double To { get; set; }
 
         public Range(double from, double to)
@@ -50,6 +47,31 @@ namespace RangeTask
             }
 
             return new Range[] { new Range(range.From, range.To), new Range(From, To) };
+        }
+
+        public Range[] GetDifferenceRange(Range range)
+        {
+            if (From >= range.From && To <= range.To)
+            {
+                return null;
+            }
+
+            if (From < range.From && To > range.To)
+            {
+                return new Range[] { new Range(From, range.From), new Range(range.To, To) };
+            }
+
+            if (From >= range.From && From < range.To)
+            {
+                return new Range[] { new Range(range.To, To) };
+            }
+
+            if (To <= range.To && To > range.From)
+            {
+                return new Range[] { new Range(From, range.From) };
+            }
+
+            return new Range[] { new Range(From, To) };
         }
     }
 }

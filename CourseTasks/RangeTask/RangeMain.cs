@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RangeTask
 {
@@ -53,7 +49,7 @@ namespace RangeTask
             }
             else
             {
-                Console.WriteLine("Интервал пересечения: [{0},{1}])", intersectionRange.From, intersectionRange.To);
+                Console.WriteLine("Интервал пересечения: [{0},{1}]", intersectionRange.From, intersectionRange.To);
             }
 
             Console.WriteLine("Проверка на объединение диапазонов 1 и 2");
@@ -68,6 +64,25 @@ namespace RangeTask
                 case 2:
                     Console.WriteLine("Результат объединения интервалов: [{0},{1}],[{2},{3}]", unionRange[0].From, unionRange[0].To, unionRange[1].From, unionRange[1].To);
                     break;
+            }
+
+            Range[] differenceRange = range1.GetDifferenceRange(range2);
+
+            if (differenceRange == null)
+            {
+                Console.WriteLine("Разности нет.");
+            }
+            else
+            {
+                switch (differenceRange.Length)
+                {
+                    case 1:
+                        Console.WriteLine("Результат разности интервалов: [{0},{1}]", differenceRange[0].From, differenceRange[0].To);
+                        break;
+                    case 2:
+                        Console.WriteLine("Результат разности интервалов: [{0},{1}],[{2},{3}]", differenceRange[0].From, differenceRange[0].To, differenceRange[1].From, differenceRange[1].To);
+                        break;
+                }
             }
         }
     }
